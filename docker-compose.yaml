@@ -1,0 +1,52 @@
+version: "2"
+services:
+  
+  fake_website:
+    build:
+        context: ./fake_website
+        dockerfile: Dockerfile    
+    container_name: FakeWebsite
+    volumes:
+      -  ./fake_website/src:/usr/app/src
+      -  ./fake_website/public:/usr/app/public
+    stdin_open: true
+    tty: true
+    restart: unless-stopped    
+    hostname: FakeWebsite
+    ports:
+      -  4500:4500
+
+
+  real_website:
+    build:
+        context: ./real_website
+        dockerfile: Dockerfile    
+    container_name: RealWebsite
+    volumes:
+      -  ./real_website/src:/usr/app/src
+      -  ./real_website/public:/usr/app/public
+    stdin_open: true
+    tty: true
+    restart: unless-stopped    
+    hostname: RealWebsite
+    ports:
+      -  4400:4400
+
+
+  hacker_api_server:
+    build:
+        context: ./hacker_api_server
+        dockerfile: Dockerfile    
+    container_name: HackerServer
+    volumes:
+      -  ./hacker_api_server/src:/usr/app/src
+      -  ./hacker_api_server/public:/usr/app/public
+    stdin_open: true
+    tty: true
+    restart: unless-stopped    
+    hostname: HackerServer
+    ports:
+      -  4600:4600
+
+    extra_hosts:
+    - "somehost:162.242.195.82"
