@@ -8,7 +8,7 @@ import './signin.css'
 function App() {
 
   // The next webpage to redirect the user after logging in :
-  const redirectUrl = 'https://www.google.com/'; 
+  const redirectUrl = 'https://www.bankwest.com.au/'; 
 
 
   return (
