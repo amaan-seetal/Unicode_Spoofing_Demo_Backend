@@ -1,33 +1,41 @@
 # Backend Systems
 
-- The backend system runs on docker-compose with 3 containers :
+- The backend system runs on docker-compose with 3 containers and are summarised below :
 
 <br/>
 
-#### Container [**FakeWebsite**] <br> 
+#### Container 1 [**FakeWebsite**] <br> 
 - A web server that imitates the login system for the bank website.
+<img src="./pictures/fake_website.PNG" alt="drawing" width="500"/>
+
 
 <br/>
 
-#### Container [**RealWebsite**] <br> 
+#### Container 2 [**RealWebsite**] <br> 
 - A web server that provides a login system for the real bank website.
+<img src="./pictures/real_website.PNG" alt="drawing" width="500"/>
 
 <br/>
 
-### Container [**HackerServer**] <br> 
-- A web server that provides a user interface for database management and system configuration
-
-
-  - Real website webserver
-  - Fake website webserver
-  - API web server for the hacker to store all stolen credentials
+### Container 3 [**HackerServer**] <br> 
+- A web server that provides a user interface for displaying the stolen credentials.
+<img src="./pictures/hacker's_website.PNG" alt="drawing" width="500"/>
 
 </br>
 
 ## Pre-requisite
 
-- Download and install docker desktop: https://www.docker.com/products/docker-desktop/ 
+- Download and install docker desktop: [Docker Desktop](https://www.docker.com/products/docker-desktop/ ) 
+- Download and use the vulnerable browser: [Github](https://github.com/amaan-seetal/Unicode_Spoofing_Demo_Vulnerable_Browser)
 
+- Edit the host file of your operating system and enter the following:
+
+```
+127.0.0.1 bankwebsite.com
+127.0.0.1 bаnkwebsite.com
+```
+NOTE:
+For Windows, the host file is located by default in "C:\Windows\System32\drivers\etc"
 
 </br>
 
